@@ -159,6 +159,14 @@
     width:100%;
     height:100%;
   }
+  .brand-logo-img{
+    height:44px;
+    width:auto;
+    display:block;
+  }
+  @media (max-width: 480px){
+    .brand-logo-img{height:36px;}
+  }
 
   nav{display:flex; align-items:center; gap:18px; font-size:.9rem; font-weight:600;}
   nav a{text-decoration:none; color:var(--navy); opacity:.85; padding:6px 0; transition:opacity .2s, color .2s;}
@@ -390,14 +398,10 @@
 <header>
   <div class="bar">
     <a href="#" class="brand-wrap" title="foukanaaa – Foukaná minerální izolace">
-      <div class="brand-logo-text">
-        <span class="b-dark">foukan</span><span class="b-blue">aaa</span>
-      </div>
-      <div class="brand-wave-box">
-        <svg class="brand-wave-svg" viewBox="0 0 100 20" preserveAspectRatio="none">
-          <path d="M0,10 Q25,0 50,10 T100,10" fill="none" stroke="#4191D3" stroke-width="6"/>
-        </svg>
-      </div>
+      <img
+        src="https://raw.githubusercontent.com/antoninlamac-ops/foukanaaa/771b45215277265903e2b99824ca9737b7de537f/foukanaaa.PNG"
+        alt="foukanaaa – Foukaná minerální izolace"
+        class="brand-logo-img">
     </a>
     <button class="menu-btn" aria-label="Menu" onclick="toggleMenu()">⋮</button>
     
