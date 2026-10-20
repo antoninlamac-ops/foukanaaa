@@ -21,7 +21,7 @@ function calculatePrice() {
   const plocha = parseFloat(document.getElementById('calc-plocha')?.value) || 0;
   const tloustkaCm = parseFloat(document.getElementById('calc-tloustka')?.value) || 0;
   const platby = parseFloat(document.getElementById('calc-platby')?.value) || 0;
-  
+
   const objemM3 = plocha * (tloustkaCm / 100);
 
   let cenaPerM3 = 1490;
@@ -89,7 +89,7 @@ function calculatePrice() {
   if (pctOut) pctOut.textContent = pctDisplay;
   if (savingOut) savingOut.textContent = Math.round(rocniUspora).toLocaleString('cs-CZ') + ' Kč / rok';
   if (analogyOut) analogyOut.textContent = analogyText;
-  
+
   if (unitOut) {
     if (objemM3 > 0 && objemM3 <= 15) {
       unitOut.textContent = '(paušální sazba do 15 m³)';
@@ -114,7 +114,7 @@ function prefillAndScroll() {
   if (formPlocha) formPlocha.value = plochaVal;
   if (formTloustka) formTloustka.value = tloustkaVal + ' cm (vypočteno objemově: ' + objemVal.toFixed(1) + ' m³)';
   if (formZprava) formZprava.value = 'Mám zájem o zateplení. Moje současné platby za vytápění jsou ' + platbyVal + ' Kč/rok.';
-  
+
   document.getElementById('poptavka')?.scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -159,7 +159,7 @@ function odeslatFormular(event) {
     zprava: document.getElementById('zprava')?.value || ''
   };
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzZnp5KanT1-EQz9epmBu3_rNlFqYs100crPGbcOYIbrieExY2iBJUbKvb7_BQ18eR_RQa/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxZnp5KanT1-EQz9epmBu3_rNlFqYs100crPGbcOYIbrieExY2iBJUbKvb7_BQ18eR_RQ/exec';
 
   fetch(scriptURL, {
     method: 'POST',
