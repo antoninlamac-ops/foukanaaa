@@ -1,3 +1,16 @@
+// --- SLEDOVÁNÍ NÁVŠTĚVNOSTI WEBU DO TELEGRAMU ---
+document.addEventListener("DOMContentLoaded", function() {
+  const TRACKING_URL = "https://script.google.com/macros/s/AKfycbyT3G9UlDFUG3klc70Dps6K5Gf_K3FfLT4QYQb4e8XRaIsPy3b3lzJO5pifDENgs5Vlwg/exec"; 
+  
+  const referrer = document.referrer || "Přímý přístup";
+  const page = window.location.hostname + window.location.pathname;
+
+  fetch(`${TRACKING_URL}?page=${encodeURIComponent(page)}&ref=${encodeURIComponent(referrer)}`, {
+    method: 'GET',
+    mode: 'no-cors' 
+  }).catch(err => console.log("Chyba odesílání návštěvy:", err));
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   const yearEl = document.getElementById('y');
   if (yearEl) {
@@ -46,7 +59,7 @@ function calculatePrice() {
       usporaPct = 0.10 + (tloustkaCm / 10) * 0.08;
     } else if (tloustkaCm <= 20) {
       usporaPct = 0.18 + ((tloustkaCm - 10) / 10) * 0.09;
-    } else if (tloustkaCm <= 30) {
+  } else if (tloustkaCm <= 30) {
       usporaPct = 0.27 + ((tloustkaCm - 20) / 10) * 0.04;
     } else if (tloustkaCm <= 40) {
       usporaPct = 0.31 + ((tloustkaCm - 30) / 10) * 0.03;
